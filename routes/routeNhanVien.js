@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { connectToSqlServer, sql } = require('../connect');
-const CBController = require('../controllers/CBcontroller');
+const CBController = require('../controllers/CBcontrollerss');
 
 router.get('/', async (req, res) => {
   try {

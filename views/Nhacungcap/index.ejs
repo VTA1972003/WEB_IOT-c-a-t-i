@@ -1,42 +1,31 @@
-<div class="container">
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-    <h2>THÔNG TIN nhà cung cấp</h2>
-    <h2><a href="/Nhacungcap/create" class="btn btn-success">Thêm nhà cung cấp mới</a></h2>
-  </div>
-  <% if (message) { %>
-    <div class="alert alert-info"><%= message %></div>
-  <% } %>
-  <table class="table table-hover table-striped" style="background-color: whitesmoke;">
-    <thead class="thead-dark">
-      <tr>
-        <th>STT</th>
-        <th>Mã nhà cung cấp</th>
-        <th>Tên nhà cung cấp</th>
-        <th>Số điện thoại</th>
-        <th>Email</th>
-        <th>Địa chỉ</th>
-        <th>Mã số thuế</th>
-        <th>Hành Động</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% NCC.forEach(function(a, index) { %>
-      <tr>
-        <td><%= index + 1 %></td>
-        <td><%= a.MaNCC %></td>
-        <td><%= a.TenNCC %></td>
-        <td><%= a.SDTNCC %></td>
-        <td><%= a.EmailNCC %></td>
-        <td><%= a.DiachiNCC %></td>
-        <td><%= a.Masothue %></td>
-        <td>
-          <a href="/Nhacungcap/update/<%= a.MaNCC %>" class="btn btn-primary btn-sm">Sửa</a>
-          <form action="/Nhacungcap/delete/<%= a.MaNCC %>" method="POST" style="display: inline;" onsubmit="return confirm('Bạn có chắc chắn muốn xóa nhà cung cấp này?');">
-            <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
-          </form>
-        </td>
-      </tr>
-      <% }) %>
-    </tbody>
-  </table>
-</div>
+    <div class="container">
+      <h2>THÔNG TIN NHÀ CUNG CẤP</h2>
+      
+      <table class="table table-hover table-striped" style="background-color: whitesmoke;">
+        <thead class="thead-dark">
+          <tr>
+            <th>STT</th>
+            <th>Mã nhà cung cấp</th>
+            <th>Tên nhà cung cấp</th>
+            <th>SDT</th>
+            <th>Email</th>
+            <th>Địa chỉ</th>
+            <th>Mã số thuế</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% Nhacungcap.forEach(function(u,index) { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= u.MaNCC %></td>
+                <td><%= u.TenNCC %></td>
+                <td><%= u.SDTNCC %></td>
+                <td><%= u.EmailNCC %></td>
+                <td><%= u.DiachiNCC %></td>
+                <td><%= u.Masothue %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+      </table>
+    </div>
+
