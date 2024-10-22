@@ -2,8 +2,8 @@ var sql = require('mssql/msnodesqlv8');
 
 // các thông tin kết nối
 var config = {
-  server: "DESKTOP-30LB2GF\\SQLEXPRESS01", 
-  database: "LH21A2S_BC40_CSDL_3", 
+  server: "PC-BY-VTA\\TEW_SQLEXPRESS", 
+  database: "LH21A2S_BC40_CSDL_4", 
   driver: "msnodesqlv8",
   options: {
     trustedConnection: true,

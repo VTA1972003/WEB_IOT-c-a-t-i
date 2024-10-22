@@ -1,50 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const { connectToSqlServer, sql } = require('../connect');
-const CBController = require('../controllers/CBcontrollerss');
+const Nhacungcapcontroller = require('../controllers/Nhacungcapcontroller');
 
-router.get('/', async (req, res) => {
-  try {
-    // Kết nối đến SQL Server và lấy pool kết nối
-    const pool = await connectToSqlServer();
-    
-    // Câu lệnh SQL để lấy dữ liệu từ bảng 'CB'
-    const sqlString = 'SELECT * FROM Nhacungcap';
-
-    // Thực hiện truy vấn
-    const result = await pool.request().query(sqlString);
-
-    // Kiểm tra dữ liệu
-    if (result.recordset.length === 0) {
-      return res.render('Nhacungcap/index', {
-        title: "Nhacungcap List",
-        Nhacungcap: [],
-        message: "Không có dữ liệu cảm biến."
-      });
-    }
-
-    // Trả về trang view với dữ liệu
-    res.render('Nhacungcap/index', {
-      title: "Nhacungcap List",
-      Nhacungcap: result.recordset,
-    });
-  } catch (err) {
-    // Xử lý lỗi nếu xảy ra
-    console.error("Lỗi truy vấn: ", err);
-    res.status(500).send("Đã xảy ra lỗi khi lấy danh sách cảm biến.");
-  }
-});
-
-// Route: GET /CB/create --> hiển thị form tạo mới cảm biến
-router.get('/CB/create', CBController.GetCreateCB);
-
-// Route: GET /CB/update/:id --> hiển thị form cập nhật cảm biến
-router.get('/update/:id', CBController.GetUpdateCB);
-
-// Route: POST /CB/update/:id --> xử lý cập nhật cảm biến
-router.post('/update/:id', CBController.PostUpdateCB);
-
-// Route: POST /CB/delete/:id --> xử lý xóa cảm biến
-router.post('/delete/:id', CBController.DeleteCB);
+router.get('/NCC', Nhacungcapcontroller.getAllNCC);
+router.get('/NCC/create', Nhacungcapcontroller.getCreateNCC);
+router.post('/NCC/create', Nhacungcapcontroller.postCreateNCC);
+router.get('/NCC/update/:id', Nhacungcapcontroller.getUpdateNCC);
+router.post('/NCC/update/:id', Nhacungcapcontroller.postUpdateNCC);
+router.post('/NCC/delete/:id', Nhacungcapcontroller.deleteNCC);
 
 module.exports = router;

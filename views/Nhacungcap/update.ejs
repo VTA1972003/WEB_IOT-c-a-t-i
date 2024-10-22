@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Cập Nhật Nhà Cung Cấp</h2>
+    <form action="/Nhacungcap/update/<%= NCC.MaNCC %>" method="POST">
+      <div class="form-group">
+        <label for="MaNCC">Mã Nhà Cung Cấp</label>
+        <input type="text" class="form-control" id="MaNCC" name="MaNCC" value="<%= NCC.MaNCC %>" readonly>
+      </div>
+      <div class="form-group">
+        <label for="TenNCC">Tên Nhà Cung Cấp</label>
+        <input type="text" class="form-control" id="TenNCC" name="TenNCC" value="<%= NCC.TenNCC %>" required>
+      </div>
+      <div class="form-group">
+        <label for="SDTNCC">Số điện thoại</label>
+        <input type="number" class="form-control" id="SDTNCC" name="SDTNCC" value="<%= NCC.SDTNCC %>">
+      </div>
+      <div class="form-group">
+        <label for="EmailNCC">Email nhà cung cấp</label>
+        <input type="text" class="form-control" id="EmailNCC" name="EmailNCC" value="<%= NCC.EmailNCC %>">
+      </div>
+      <div class="form-group">
+        <label for="DiachiNCC">Địa Chỉ Nhà Cung Cấp</label>
+        <input type="text" class="form-control" id="DiachiNCC" name="DiachiNCC" value="<%= NCC.DiachiNCC %>">
+      </div>
+      <div class="form-group">
+        <label for="Masothue">Mã Số Thuế</label>
+        <input type="text" class="form-control" id="Masothue" name="Masothue" value="<%= NCC.Masothue %>">
+      </div>
+      <button type="submit" class="btn btn-primary">Cập Nhật</button>
+      <a href="/NCC" class="btn btn-secondary">Hủy</a>
+    </form>
+  </div>
