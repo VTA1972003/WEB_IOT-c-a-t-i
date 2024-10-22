@@ -1,0 +1,31 @@
+    <div class="container">
+      <h2>THÔNG TIN VỊ TRÍ KHO</h2>
+      
+      <table class="table table-hover table-striped" style="background-color: whitesmoke;">
+        <thead class="thead-dark">
+          <tr>
+            <th>STT</th>
+            <th>Mã vị trí CB</th>
+            <th>Mã hóa đơn</th>
+            <th>Mã nhân viên</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% 
+            VTKHO.forEach(function(u, index) { 
+              let maViTriCB = u.MaViTriCB;
+              let kho = 'Kho ' + maViTriCB.charAt(1);
+              let khu = 'Khu ' + maViTriCB.slice(maViTriCB.indexOf('K') + 2);
+              let formattedMaViTriCB = kho + ', ' + khu;
+            %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= formattedMaViTriCB %></td>
+              <td><%= u.MaHD %></td>
+              <td><%= u.MaNV %></td>
+            </tr>
+          <% }) %>
+        </tbody>        
+      </table>
+
+    </div>

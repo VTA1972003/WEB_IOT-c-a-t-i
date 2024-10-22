@@ -1,0 +1,41 @@
+
+    <div class="container">
+      <h2>THÔNG TIN CHI TIẾT NHẬP KHO</h2>
+      
+      <!-- Thêm bảng ở đây -->
+      <table class="table table-hover table-striped" style="background-color: whitesmoke;">
+        <thead class="thead-dark">
+          <tr>
+            <th>STT</th>
+            <th>Ngày nhập</th>
+            <th>Mã nhập</th>
+            <th>Tình trạng</th>
+            <th>Mã cảm biến</th>
+            <th>Mã vị trí</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% CTNK.forEach(function(u,index) { 
+              let maViTriCB = u.MaViTriCB;
+              let kho = 'Kho ' + maViTriCB.charAt(1);
+              let khu = 'Khu ' + maViTriCB.slice(maViTriCB.indexOf('K') + 2);
+              let formattedMaViTriCB = kho + ', ' + khu;
+              %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= new Date(u.NgaynhapK).toLocaleDateString('en-GB', { 
+                  day: '2-digit', 
+                  month: '2-digit', 
+                  year: 'numeric' 
+                  }) %>
+                </td>
+                <td><%= u.MaNK %></td>
+                <td><%= u.TINHTRANGCB %></td>
+                <td><%= u.MaCB %></td>
+                <td><%= formattedMaViTriCB %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+      </table>
+
+    </div>

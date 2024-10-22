@@ -1,0 +1,46 @@
+
+    <div class="container">
+      <h2>THÔNG TIN NHÂN VIÊN</h2>
+      
+      <table class="table table-hover table-striped" style="background-color: whitesmoke;">
+        <thead class="thead-dark">
+          <tr>
+            <th>STT</th>
+            <th>Mã Số</th>
+            <th>Họ và Tên</th>
+            <th>Ngày Sinh</th>
+            <th>CCCD</th>
+            <th>Email</th>
+            <th>Số Điện Thoại</th>
+            <th>Địa Chỉ</th>
+            <th>Giới Tính</th>
+            <th>Chức Vụ</th>
+            <th>Công Việc</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% Nhanvien.forEach(function(u,index) { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= u.MaNV %></td>
+                <td><%= u.TenNV %></td>
+                <td><%= new Date(u.NgaySinhNV).toLocaleDateString('en-GB', { 
+                    day: '2-digit', 
+                    month: '2-digit', 
+                    year: 'numeric' 
+                  }) %>
+                </td>
+                <td><%= u.SoCCCDNV %></td>
+                <td><%= u.EmailNV %></td>
+                <td><%= u.SDTNV %></td>
+                <td><%= u.DiachiNV %></td>
+                <td><%= u.GioiTinh %></td>
+                <td><%= u.Chucvu %></td>
+                <td><%= u.CONGVIEC %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+      </table>
+
+    </div>
+  

@@ -1,0 +1,44 @@
+<div class="container">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <h2>THÔNG TIN CẢM BIẾN</h2>
+    <h2><a href="/CB/create" class="btn btn-success">Thêm cảm biến mới</a></h2>
+  </div>
+  <% if (message) { %>
+    <div class="alert alert-info"><%= message %></div>
+  <% } %>
+  <table class="table table-hover table-striped" style="background-color: whitesmoke;">
+    <thead class="thead-dark">
+      <tr>
+        <th>STT</th>
+        <th>Mã cảm biến</th>
+        <th>Tên cảm biến</th>
+        <th>Xuất xứ CB</th>
+        <th>Đơn giá</th>
+        <th>Loại</th>
+        <th>HSD</th>
+        <th>Mã hóa đơn</th>
+        <th>Hành Động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% CB.forEach(function(a, index) { %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= a.MaCB %></td>
+        <td><%= a.TenCB %></td>
+        <td><%= a.XuatxuCB %></td>
+        <td><%= a.DongiaCB %></td>
+        <td><%= a.LoaiCB %></td>
+        <td><%= a.HSD.toISOString().split('T')[0] %></td>
+        <td><%= a.MaHD %></td>
+        <td>
+          <a href="/CB/update/<%= a.MaCB %>" class="btn btn-primary btn-sm">Sửa</a>
+          <form action="/CB/delete/<%= a.MaCB %>" method="POST" style="display: inline;" onsubmit="return confirm('Bạn có chắc chắn muốn xóa cảm biến này?');">
+            <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+          </form>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>

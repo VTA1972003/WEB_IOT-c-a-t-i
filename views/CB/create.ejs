@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="mb-4">Thêm Cảm Biến Mới</h2>
+    <form action="/CB/create" method="POST">
+      <div class="form-group">
+        <label for="MaCB">Mã Cảm Biến:</label>
+        <input type="text" class="form-control" name="MaCB" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="TenCB">Tên Cảm Biến:</label>
+        <input type="text" class="form-control" name="TenCB" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="XuatxuCB">Xuất Xứ:</label>
+        <input type="text" class="form-control" name="XuatxuCB" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="DongiaCB">Đơn Giá:</label>
+        <input type="number" class="form-control" name="DongiaCB" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="LoaiCB">Loại Cảm Biến:</label>
+        <input type="text" class="form-control" name="LoaiCB" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="HSD">Hạn Sử Dụng:</label>
+        <input type="date" class="form-control" name="HSD" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="MaHD">Mã Hợp Đồng:</label>
+        <input type="text" class="form-control" name="MaHD" required>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Thêm Cảm Biến</button>
+    </form>    
+  </div>
+
+  <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

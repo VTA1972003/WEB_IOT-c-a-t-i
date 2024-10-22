@@ -1,0 +1,26 @@
+{
+  "name": "sudunglayout",
+  "version": "1.0.0",
+  "description": "Sử dụng layout trong EJS với Express",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Layout",
+    "ejs"
+  ],
+  "author": "Nguyen Minh Phuc",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "express-ejs-layouts": "^2.5.1",
+    "msnodesqlv8": "^4.2.1",
+    "mssql": "^11.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

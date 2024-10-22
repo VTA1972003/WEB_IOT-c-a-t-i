@@ -1,0 +1,41 @@
+
+    <div class="container">
+      <h2>THÔNG TIN HÓA ĐƠN</h2>
+
+      <table class="table table-hover table-striped" style="background-color: whitesmoke;">
+        <thead class="thead-dark">
+          <tr>
+            <th>STT</th>
+            <th>Mã hóa đơn</th>
+            <th>Ngày lập HD</th>
+            <th>Số lượng CB</th>
+            <th>Ghi chú</th>
+            <th>CPVC</th>
+            <th>Thuế</th>
+            <th>Nhà cung cấp</th>
+            <th>Nhân viên</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% Hoadon.forEach(function(u,index) { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= u.MaHD %></td>
+                <td><%= new Date(u.NgaylapHD).toLocaleDateString('en-GB', { 
+                    day: '2-digit', 
+                    month: '2-digit', 
+                    year: 'numeric' 
+                  }) %>
+                </td>
+                <td><%= u.SLCBPdon %></td>
+                <td><%= u.GHICHU %></td>
+                <td><%= u.CPVC %></td>
+                <td><%= (u.THUE * 100).toLocaleString('en-US', { minimumIntegerDigits: 2, minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%' %></td>
+                <td><%= u.TenNCC %></td>
+                <td><%= u.TenNV %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+      </table>
+
+    </div>

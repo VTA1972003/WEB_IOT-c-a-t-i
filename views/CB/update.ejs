@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Cập Nhật Cảm Biến</h2>
+    <form action="/CB/update/<%= CB.MaCB %>" method="POST">
+      <div class="form-group">
+        <label for="MaCB">Mã Cảm Biến</label>
+        <input type="text" class="form-control" id="MaCB" name="MaCB" value="<%= CB.MaCB %>" readonly>
+      </div>
+      <div class="form-group">
+        <label for="TenCB">Tên Cảm Biến</label>
+        <input type="text" class="form-control" id="TenCB" name="TenCB" value="<%= CB.TenCB %>" required>
+      </div>
+      <div class="form-group">
+        <label for="XuatxuCB">Xuất Xứ</label>
+        <input type="text" class="form-control" id="XuatxuCB" name="XuatxuCB" value="<%= CB.XuatxuCB %>">
+      </div>
+      <div class="form-group">
+        <label for="DongiaCB">Đơn Giá</label>
+        <input type="number" step="0.01" class="form-control" id="DongiaCB" name="DongiaCB" value="<%= CB.DongiaCB %>">
+      </div>
+      <div class="form-group">
+        <label for="LoaiCB">Loại Cảm Biến</label>
+        <input type="text" class="form-control" id="LoaiCB" name="LoaiCB" value="<%= CB.LoaiCB %>">
+      </div>
+      <div class="form-group">
+        <label for="HSD">Hạn Sử Dụng</label>
+        <input type="date" class="form-control" id="HSD" name="HSD" value="<%= CB.HSD.toISOString().split('T')[0] %>">
+      </div>
+      <div class="form-group">
+        <label for="MaHD">Mã Hóa Đơn</label>
+        <input type="text" class="form-control" id="MaHD" name="MaHD" value="<%= CB.MaHD %>">
+      </div>
+      <button type="submit" class="btn btn-primary">Cập Nhật</button>
+      <a href="/CB" class="btn btn-secondary">Hủy</a>
+    </form>
+  </div>
+</body>
+</html>

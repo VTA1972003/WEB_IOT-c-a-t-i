@@ -1,0 +1,31 @@
+    <div class="container">
+      <h2>THÔNG TIN NHÀ CUNG CẤP</h2>
+      
+      <table class="table table-hover table-striped" style="background-color: whitesmoke;">
+        <thead class="thead-dark">
+          <tr>
+            <th>STT</th>
+            <th>Mã nhà cung cấp</th>
+            <th>Tên nhà cung cấp</th>
+            <th>SDT</th>
+            <th>Email</th>
+            <th>Địa chỉ</th>
+            <th>Mã số thuế</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% Nhacungcap.forEach(function(u,index) { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= u.MaNCC %></td>
+                <td><%= u.TenNCC %></td>
+                <td><%= u.SDTNCC %></td>
+                <td><%= u.EmailNCC %></td>
+                <td><%= u.DiachiNCC %></td>
+                <td><%= u.Masothue %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+      </table>
+    </div>
+
